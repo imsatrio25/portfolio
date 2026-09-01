@@ -7,8 +7,14 @@
   --foreground: #ededed;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: "Space Grotesk Variable", Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }

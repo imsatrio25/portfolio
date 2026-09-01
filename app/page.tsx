@@ -1,6 +1,16 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
+
+const container: Variants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.1 } },
+};
+
+const item: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
 
 const STACK = [
   "Python",
@@ -60,10 +70,67 @@ const experience = [
   },
 ];
 
+// ponytail: inline project data mirrors content/projects/*.mdx; swap for MDX-driven ProjectCard when PF-05 lands
+const projects = [
+  {
+    title: "Semua-AI (terbantu.ai)",
+    desc: "AI sales agent untuk UMKM — jawab chat, kualifikasi lead, tutup transaksi di WhatsApp, Instagram, dan web.",
+    tech: ["Next.js", "LLM", "RAG", "Midtrans", "Biteship"],
+    live: "https://terbantu.ai",
+  },
+  {
+    title: "MatchLens",
+    desc: "Tinder-style swipe untuk matching skill freelancer dan kebutuhan klien.",
+    tech: ["React", "FastAPI", "Postgres"],
+    live: "",
+  },
+  {
+    title: "Prediksi Gempa",
+    desc: "Model ML prediksi radius gempa 98% akurat untuk mendukung respons bencana.",
+    tech: ["Python", "sklearn", "umap-learn"],
+    live: "",
+  },
+  {
+    title: "Movie Rec",
+    desc: "Sistem rekomendasi film berbasis collaborative filtering.",
+    tech: ["Python", "ML"],
+    live: "",
+  },
+];
+
+const nav = [
+  { href: "#experience", label: "Experience" },
+  { href: "#work", label: "Work" },
+  { href: "#contact", label: "Contact" },
+];
+
 export default function Home() {
   return (
-    <main className="mx-auto flex min-h-screen max-w-2xl flex-col px-6">
-      <section className="flex flex-1 flex-col justify-center">
+    <main className="min-h-screen">
+      <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-[#0a0a0a]/80 backdrop-blur">
+        <div className="mx-auto flex max-w-2xl items-center justify-between px-6 py-4">
+          <a href="#top" className="font-mono text-sm text-accent">
+            imamsatrio.dev
+          </a>
+          <ul className="flex gap-6">
+            {nav.map((n) => (
+              <li key={n.href}>
+                <a
+                  href={n.href}
+                  className="text-sm text-neutral-400 transition-colors hover:text-white"
+                >
+                  {n.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
+
+      <section
+        id="top"
+        className="mx-auto flex min-h-screen max-w-2xl flex-col justify-center px-6 pt-20"
+      >
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -117,7 +184,7 @@ export default function Home() {
       <motion.section
         id="about"
         {...fadeUp}
-        className="border-t border-neutral-800 py-24"
+        className="mx-auto max-w-2xl border-t border-neutral-800 px-6 py-24"
       >
         <p className="mb-4 font-mono text-sm text-accent">about</p>
         <div className="space-y-4 text-neutral-400">
@@ -148,15 +215,19 @@ export default function Home() {
       </motion.section>
 
       <motion.section
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-        className="mt-16"
+        id="experience"
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-80px" }}
+        className="mx-auto max-w-2xl px-6 pb-24"
       >
-        <h2 className="mb-6 font-mono text-sm text-accent">Experience</h2>
-        <ol className="relative border-l border-neutral-800 pl-6">
+        <motion.h2 variants={item} className="mb-6 font-mono text-sm text-accent">
+          Experience
+        </motion.h2>
+        <motion.ol variants={container} className="relative border-l border-neutral-800 pl-6">
           {experience.map((entry) => (
-            <li key={entry.role} className="mb-8 last:mb-0">
+            <motion.li key={entry.role} variants={item} className="mb-8 last:mb-0">
               <span className="absolute -left-[5px] mt-1.5 h-2.5 w-2.5 rounded-full bg-accent" />
               <p className="font-mono text-xs text-accent">{entry.dates}</p>
               <h3 className="mt-1 font-semibold">{entry.role}</h3>
@@ -164,21 +235,72 @@ export default function Home() {
               <p className="mt-2 text-sm leading-relaxed text-neutral-300">
                 {entry.desc}
               </p>
-            </li>
+            </motion.li>
           ))}
-        </ol>
+        </motion.ol>
       </motion.section>
 
-      {/* ponytail: project cards land in PF-03; placeholder keeps #work anchor valid */}
-      <section id="work" className="flex min-h-screen flex-col justify-center">
-        <h2 className="text-2xl font-bold tracking-tight">Selected Work</h2>
-      </section>
+      <motion.section
+        id="work"
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-80px" }}
+        className="mx-auto max-w-2xl px-6 py-24"
+      >
+        <motion.h2 variants={item} className="mb-6 font-mono text-sm text-accent">
+          Selected Work
+        </motion.h2>
+        <div className="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2">
+          {projects.map((p) => (
+            <motion.article
+              key={p.title}
+              variants={item}
+              whileHover={{ y: -6 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="flex min-w-0 flex-col rounded-xl border border-white/10 bg-white/[0.03] p-6"
+            >
+              <h3 className="text-lg font-bold">{p.title}</h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-400">{p.desc}</p>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {p.tech.map((t) => (
+                  <li
+                    key={t}
+                    className="rounded-full border border-accent/30 px-2.5 py-0.5 font-mono text-xs text-accent"
+                  >
+                    {t}
+                  </li>
+                ))}
+              </ul>
+              {p.live && (
+                <a
+                  href={p.live}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-4 text-sm font-semibold text-accent hover:underline"
+                >
+                  Live →
+                </a>
+              )}
+            </motion.article>
+          ))}
+        </div>
+      </motion.section>
 
-      <section id="contact" className="py-16">
-        <h2 className="mb-6 font-mono text-sm text-accent">Contact</h2>
-        <ul className="space-y-3">
+      <motion.section
+        id="contact"
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-80px" }}
+        className="mx-auto max-w-2xl px-6 py-24"
+      >
+        <motion.h2 variants={item} className="mb-6 font-mono text-sm text-accent">
+          Contact
+        </motion.h2>
+        <motion.ul variants={container} className="space-y-3">
           {links.map((l) => (
-            <li key={l.label}>
+            <motion.li key={l.label} variants={item}>
               <a
                 href={l.href}
                 className="group flex items-baseline justify-between gap-4 border-b border-neutral-800 pb-3 text-neutral-300 transition-colors hover:text-white"
@@ -186,12 +308,12 @@ export default function Home() {
                 <span className="text-sm text-neutral-500 group-hover:text-accent">
                   {l.label}
                 </span>
-                <span className="text-lg">{l.value}</span>
+                <span className="break-all text-lg">{l.value}</span>
               </a>
-            </li>
+            </motion.li>
           ))}
-        </ul>
-      </section>
+        </motion.ul>
+      </motion.section>
 
       <footer className="border-t border-neutral-800 py-8 text-center text-sm text-neutral-500">
         © 2026 Imam Satrio.

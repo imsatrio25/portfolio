@@ -2,6 +2,24 @@
 
 import { motion } from "framer-motion";
 
+const STACK = [
+  "Python",
+  "FastAPI",
+  "React/TS",
+  "Postgres",
+  "Next.js",
+  "Three.js",
+  "umap-learn",
+  "sklearn",
+  "n8n",
+  "Docker",
+  "RAG/LLM",
+  "MCP",
+  "OAuth2",
+  "Tailwind",
+  "shadcn",
+];
+
 export default function Home() {
   return (
     <main className="mx-auto flex min-h-screen max-w-2xl flex-col justify-center px-6">
@@ -17,6 +35,24 @@ export default function Home() {
         <p className="mt-4 text-lg text-neutral-400">
           Software engineer building SaaS, APIs, and full-stack products.
         </p>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
+        className="mt-10"
+      >
+        <div className="flex flex-wrap gap-2">
+          {STACK.map((tech) => (
+            <span
+              key={tech}
+              className="rounded-full border border-neutral-800 px-3 py-1 font-mono text-xs text-neutral-400 transition-colors hover:border-accent/60 hover:text-accent"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
       </motion.div>
     </main>
   );

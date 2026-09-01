@@ -57,13 +57,27 @@ export default function Home() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <p className="mb-4 font-mono text-sm text-accent">imamsatrio.dev</p>
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            Imam Satrio
+          <h1 className="text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
+            AI Engineer building production AI products for Indonesian SMEs.{" "}
+            <span className="text-neutral-400">
+              From 98%-accurate ML models to live WhatsApp sales agents — I ship.
+            </span>
           </h1>
-          <p className="mt-4 text-lg text-neutral-400">
-            Software engineer building SaaS, APIs, and full-stack products.
-          </p>
-          <p className="mt-2 font-mono text-sm text-neutral-500">
+          <div className="mt-8 flex flex-wrap gap-4">
+            <a
+              href="#work"
+              className="rounded-md bg-accent px-5 py-3 text-sm font-semibold text-black transition-opacity hover:opacity-90"
+            >
+              View Work
+            </a>
+            <a
+              href="mailto:imamsatrio357@gmail.com"
+              className="rounded-md border border-neutral-700 px-5 py-3 text-sm font-semibold text-neutral-200 transition-colors hover:border-neutral-500"
+            >
+              Get in Touch
+            </a>
+          </div>
+          <p className="mt-4 font-mono text-sm text-neutral-500">
             Open to: AI/ML Engineer roles — remote or Jakarta
           </p>
         </motion.div>
@@ -108,6 +122,11 @@ export default function Home() {
           ))}
         </ol>
       </motion.section>
+
+      {/* ponytail: project cards land in PF-03; placeholder keeps #work anchor valid */}
+      <section id="work" className="flex min-h-screen flex-col justify-center">
+        <h2 className="text-2xl font-bold tracking-tight">Selected Work</h2>
+      </section>
 
       <section id="contact" className="py-16">
         <h2 className="mb-6 font-mono text-sm text-accent">Contact</h2>

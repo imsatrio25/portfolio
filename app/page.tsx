@@ -20,6 +20,19 @@ const STACK = [
   "shadcn",
 ];
 
+const fadeUp = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-80px" },
+  transition: { duration: 0.6, ease: "easeOut" },
+} as const;
+
+const stats = [
+  { value: "98%", label: "model accuracy" },
+  { value: "4", label: "projects live" },
+  { value: "2+", label: "years experience" },
+];
+
 const links = [
   { label: "Email", href: "mailto:imamsatrio357@gmail.com", value: "imamsatrio357@gmail.com" },
   { label: "GitHub", href: "https://github.com/imsatrio25", value: "@imsatrio25" },
@@ -100,6 +113,39 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
+
+      <motion.section
+        id="about"
+        {...fadeUp}
+        className="border-t border-neutral-800 py-24"
+      >
+        <p className="mb-4 font-mono text-sm text-accent">about</p>
+        <div className="space-y-4 text-neutral-400">
+          <p>
+            AI engineer with 2+ years of experience, most recently as IT
+            Specialist at PT Tata Bisnis Solusi (2025–2026) where I shipped
+            machine learning systems into production.
+          </p>
+          <p>
+            Earlier, as an MSIB Machine Learning intern with Gunadarma x BPBD
+            Cianjur, I built an earthquake prediction model that reached 98%
+            accuracy.
+          </p>
+          <p>
+            What drives me is building AI that helps people — a sales agent for
+            UMKM owners, football scouting tools, and anything else where a
+            model can do real work.
+          </p>
+        </div>
+        <div className="mt-12 grid grid-cols-3 gap-6">
+          {stats.map((s) => (
+            <div key={s.label}>
+              <p className="text-3xl font-bold text-accent">{s.value}</p>
+              <p className="mt-1 text-sm text-neutral-500">{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </motion.section>
 
       <motion.section
         initial={{ opacity: 0, y: 12 }}

@@ -26,6 +26,27 @@ const links = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/imsatrio25/", value: "in/imsatrio25" },
 ];
 
+const experience = [
+  {
+    role: "IT Specialist / AI Automation Developer",
+    org: "PT Tata Bisnis Solusi",
+    dates: "2025 — 2026",
+    desc: "Built LLM fallback chains, MCP tooling, SharePoint OAuth2 integrations, and n8n automation workflows for client operations.",
+  },
+  {
+    role: "ML Engineer Intern",
+    org: "MSIB Gunadarma × BPBD Cianjur",
+    dates: "2024",
+    desc: "Developed an earthquake radius prediction model with 98% accuracy to support disaster response.",
+  },
+  {
+    role: "Side Projects / Freelance",
+    org: "Semua-AI · MatchLens",
+    dates: "Ongoing",
+    desc: "Founded Semua-AI, created MatchLens, and shipped automation tools for clients.",
+  },
+];
+
 export default function Home() {
   return (
     <main className="mx-auto flex min-h-screen max-w-2xl flex-col px-6">
@@ -65,6 +86,28 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
+
+      <motion.section
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+        className="mt-16"
+      >
+        <h2 className="mb-6 font-mono text-sm text-accent">Experience</h2>
+        <ol className="relative border-l border-neutral-800 pl-6">
+          {experience.map((entry) => (
+            <li key={entry.role} className="mb-8 last:mb-0">
+              <span className="absolute -left-[5px] mt-1.5 h-2.5 w-2.5 rounded-full bg-accent" />
+              <p className="font-mono text-xs text-accent">{entry.dates}</p>
+              <h3 className="mt-1 font-semibold">{entry.role}</h3>
+              <p className="text-sm text-neutral-400">{entry.org}</p>
+              <p className="mt-2 text-sm leading-relaxed text-neutral-300">
+                {entry.desc}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </motion.section>
 
       <section id="contact" className="py-16">
         <h2 className="mb-6 font-mono text-sm text-accent">Contact</h2>

@@ -166,7 +166,7 @@ export default function Home() {
               Get in Touch
             </a>
           </div>
-          <p className="mt-4 font-mono text-sm text-neutral-500">
+          <p className="mt-4 font-mono text-sm text-neutral-400">
             Open to: AI/ML Engineer roles — remote or Jakarta
           </p>
         </motion.div>
@@ -332,7 +332,7 @@ export default function Home() {
         </motion.ul>
       </motion.section>
 
-      <footer className="border-t border-neutral-800 py-8 text-center text-sm text-neutral-500">
+      <footer className="border-t border-neutral-800 py-8 text-center text-sm text-neutral-400">
         © 2026 Imam Satrio.
       </footer>
     </main>

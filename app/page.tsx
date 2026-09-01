@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 
 const container: Variants = {
@@ -74,24 +75,32 @@ const experience = [
 const projects = [
   {
     title: "Semua-AI (terbantu.ai)",
+    img: "/projects/semua-ai.svg",
+    alt: "Semua-AI dashboard — AI sales agent untuk UMKM",
     desc: "AI sales agent untuk UMKM — jawab chat, kualifikasi lead, tutup transaksi di WhatsApp, Instagram, dan web.",
     tech: ["Next.js", "LLM", "RAG", "Midtrans", "Biteship"],
     live: "https://terbantu.ai",
   },
   {
     title: "MatchLens",
+    img: "/projects/matchlens.svg",
+    alt: "MatchLens — swipe matching skill freelancer dan klien",
     desc: "Tinder-style swipe untuk matching skill freelancer dan kebutuhan klien.",
     tech: ["React", "FastAPI", "Postgres"],
     live: "",
   },
   {
     title: "Prediksi Gempa",
+    img: "/projects/prediksi-gempa.svg",
+    alt: "Prediksi Gempa — peta radius gempa ML 98% akurat",
     desc: "Model ML prediksi radius gempa 98% akurat untuk mendukung respons bencana.",
     tech: ["Python", "sklearn", "umap-learn"],
     live: "",
   },
   {
     title: "Movie Rec",
+    img: "/projects/movie-rec.svg",
+    alt: "Movie Rec — sistem rekomendasi film collaborative filtering",
     desc: "Sistem rekomendasi film berbasis collaborative filtering.",
     tech: ["Python", "ML"],
     live: "",
@@ -260,6 +269,14 @@ export default function Home() {
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
               className="flex min-w-0 flex-col rounded-xl border border-white/10 bg-white/[0.03] p-6"
             >
+              <Image
+                src={p.img}
+                alt={p.alt}
+                width={1280}
+                height={720}
+                loading="lazy"
+                className="mb-4 w-full rounded-lg border border-white/10 object-cover"
+              />
               <h3 className="text-lg font-bold">{p.title}</h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-400">{p.desc}</p>
               <ul className="mt-4 flex flex-wrap gap-2">

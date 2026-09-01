@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#0a0a0a"/>
+  <g fill="none" stroke="#10b981">
+    <circle cx="560" cy="360" r="60" stroke-width="3"/>
+    <circle cx="560" cy="360" r="110" stroke-width="2" stroke-opacity="0.7"/>
+    <circle cx="560" cy="360" r="170" stroke-width="1.5" stroke-opacity="0.4"/>
+    <circle cx="560" cy="360" r="240" stroke-width="1" stroke-opacity="0.2"/>
+  </g>
+  <circle cx="560" cy="360" r="14" fill="#ef4444"/>
+  <g stroke="#6b7280" stroke-width="2">
+    <line x1="850" y1="240" x2="950" y2="200"/>
+    <line x1="950" y1="200" x2="1060" y2="180"/>
+    <line x1="950" y1="200" x2="1000" y2="300"/>
+  </g>
+  <circle cx="850" cy="240" r="5" fill="#9ca3af"/>
+  <circle cx="1060" cy="180" r="5" fill="#9ca3af"/>
+  <circle cx="1000" cy="300" r="5" fill="#9ca3af"/>
+  <text x="560" y="600" font-family="ui-monospace, Menlo, monospace" font-size="34" font-weight="700" fill="#e5e7eb" text-anchor="middle">Prediksi Gempa</text>
+  <text x="560" y="650" font-family="ui-monospace, Menlo, monospace" font-size="22" fill="#6b7280" text-anchor="middle">radius gempa 98% akurat · BPBD Cianjur</text>
+</svg>

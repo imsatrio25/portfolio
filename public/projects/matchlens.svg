@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <defs>
+    <radialGradient id="gal" cx="0.5" cy="0.5" r="0.7">
+      <stop offset="0" stop-color="#1e1b4b"/>
+      <stop offset="1" stop-color="#0a0a0a"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#gal)"/>
+  <g fill="#e5e7eb">
+    <circle cx="200" cy="140" r="2"/><circle cx="350" cy="90" r="1.5"/>
+    <circle cx="900" cy="120" r="2"/><circle cx="1100" cy="300" r="1.5"/>
+    <circle cx="150" cy="520" r="1.5"/><circle cx="1150" cy="560" r="2"/>
+    <circle cx="760" cy="80" r="1.5"/><circle cx="430" cy="600" r="2"/>
+  </g>
+  <ellipse cx="640" cy="360" rx="220" ry="90" fill="#7c3aed" fill-opacity="0.55" transform="rotate(-20 640 360)"/>
+  <circle cx="640" cy="360" r="26" fill="#a78bfa"/>
+  <text x="640" y="540" font-family="ui-monospace, Menlo, monospace" font-size="34" font-weight="700" fill="#e5e7eb" text-anchor="middle">MatchLens</text>
+  <text x="640" y="590" font-family="ui-monospace, Menlo, monospace" font-size="22" fill="#6b7280" text-anchor="middle">swipe match skill freelancer × klien</text>
+</svg>

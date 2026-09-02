@@ -21,7 +21,7 @@ Content lives in MDX files under [`content/projects/`](content/projects/).
 | [MatchLens Style Galaxy](content/projects/matchlens.mdx) | 2025 | Next.js, Three.js, UMAP, HGB, LLM | [GitHub](https://github.com/imsatrio25/matchlens) |
 | [Movie Recommender](content/projects/movie-rec.mdx) | 2024 | Django, TMDB API, Python | [GitHub](https://github.com/imsatrio25/movie-recommendations-web-using-django) |
 | [Prediksi Gempa](content/projects/prediksi-gempa.mdx) | 2024 | Django, Random Forest, Python | [GitHub](https://github.com/imsatrio25/prediksi-gempa-django-app) |
-| [Semua-AI (terbantu.ai)](content/projects/semua-ai.mdx) | 2026 | Next.js, LLM, RAG, WhatsApp API, Midtrans, Biteship | [Live →](https://terbantu.ai) |
+| [Semua-AI (terbantu.ai)](content/projects/semua-ai.mdx) | 2026 | Next.js, LLM, RAG, WhatsApp API, Midtrans, Biteship | — |
 
 ## Getting Started
 

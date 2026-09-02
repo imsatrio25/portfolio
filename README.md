@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Imam Satrio — Portfolio
+
+![Portfolio screenshot](docs/screenshot.png)
+
+Personal portfolio of **Imam Satrio** — AI engineer building production AI products for Indonesian SMEs. From 98%-accurate ML models to live WhatsApp sales agents.
+
+- **Repo:** [github.com/imsatrio25/portfolio](https://github.com/imsatrio25/portfolio)
+- **Role:** AI/ML Engineer — open to remote or Jakarta
+- **Contact:** [imamsatrio357@gmail.com](mailto:imamsatrio357@gmail.com) · [LinkedIn](https://www.linkedin.com/in/imsatrio25)
+
+## Tech Stack
+
+[Next.js 14](https://nextjs.org) · [React 18](https://react.dev) · [TypeScript](https://www.typescriptlang.org) · [Tailwind CSS 3](https://tailwindcss.com) · [Framer Motion](https://www.framer.com/motion/) · [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote) · [Space Grotesk](https://fontsource.org/fonts/space-grotesk)
+
+## Selected Projects
+
+Content lives in MDX files under [`content/projects/`](content/projects/).
+
+| Project | Year | Stack | Links |
+| --- | --- | --- | --- |
+| [MatchLens Style Galaxy](content/projects/matchlens.mdx) | 2025 | Next.js, Three.js, UMAP, HGB, LLM | [GitHub](https://github.com/imsatrio25/matchlens) |
+| [Movie Recommender](content/projects/movie-rec.mdx) | 2024 | Django, TMDB API, Python | [GitHub](https://github.com/imsatrio25/movie-recommendations-web-using-django) |
+| [Prediksi Gempa](content/projects/prediksi-gempa.mdx) | 2024 | Django, Random Forest, Python | [GitHub](https://github.com/imsatrio25/prediksi-gempa-django-app) |
+| [Semua-AI (terbantu.ai)](content/projects/semua-ai.mdx) | 2026 | Next.js, LLM, RAG, WhatsApp API, Midtrans, Biteship | [Live →](https://terbantu.ai) |
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Production build:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+app/            Next.js App Router pages
+components/     UI components (ProjectCard, sections)
+content/projects/  Project data as MDX (title, tech, description)
+public/         Static assets + project screenshots
+```
